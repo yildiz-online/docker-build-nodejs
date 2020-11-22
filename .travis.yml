@@ -12,7 +12,7 @@ services:
 before_install:
   - docker build -t moussavdb/build-nodejs-$TRAVIS_CPU_ARCH:latest -t moussavdb/build-nodejs-$TRAVIS_CPU_ARCH:build_$TRAVIS_BUILD_NUMBER .
 script:
-  - docker images moussavdb/build-nodejs
+  - docker images moussavdb/build-nodejs-$TRAVIS_CPU_ARCH
   
 after_success:
   - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
