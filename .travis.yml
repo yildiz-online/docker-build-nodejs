@@ -16,6 +16,6 @@ before_install:
   - chmod a+x ~/.docker/cli-plugins/docker-buildx
   
 script:
-  - docker login -u="moussavdb" --password-stdin="$DOCKER_PASSWORD";
+  - docker login -u="moussavdb" --password-stdin < "$DOCKER_PASSWORD";
   - docker buildx create --use
   - docker buildx build --push --platform linux/arm64/v8,linux/amd64 --tag moussavdb/build-nodejs:20 --tag moussavdb/build-nodejs:lts .
