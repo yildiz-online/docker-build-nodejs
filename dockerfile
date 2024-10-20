@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:23-alpine
 
 LABEL maintainer="Grégory Van den Borre vandenborre.gregory@hotmail.fr"
 
